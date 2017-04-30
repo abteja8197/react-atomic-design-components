@@ -4,12 +4,29 @@ import { storiesOf } from '@kadira/storybook';
 import Icon from '../components/Atoms/Image/Icon';
 import Heading from '../components/Atoms/Title/Heading';
 import Info from '../components/Atoms/Text/Info';
+import Label from '../components/Atoms/Text/Label';
 
 import OrderHeader from '../components/Molecules/Banner/OrderHeader';
+import OrderCustomer from '../components/Molecules/Info/OrderCustomer';
 
 const orderHeader = {
   "title": "Mevrouw de Boer",
   "subtitle": "5679594403"
+};
+
+const orderCustomer = {
+  "dateTime": {
+    "label": "Aangevraagd om:",
+    "text": "2016-05-24 09:00"
+  },
+  "email": {
+    "label": "Email:",
+    "text": "mevrouwdeboer@gmail.com"
+  },
+  "telephone": {
+    "label": "Telephone:",
+    "text": "0691345432"
+  }
 };
 
 storiesOf('Icon', module)
@@ -42,7 +59,24 @@ storiesOf('Heading', module)
     <Info body={"In behandeling"} />
   ));
 
+storiesOf('Label', module)
+  .add('default', () => (
+    <Label text={"Aangevraagd om"} />
+  ))
+    .add('striking', () => (
+    <Label text={"Aangevraagd om"} striking />
+  ));
+
 storiesOf('OrderHeader', module)
   .add('default', () => (
     <OrderHeader title={orderHeader.title} subtitle={orderHeader.subtitle} />
+  ));
+
+storiesOf('OrderCustomer', module)
+  .add('default', () => (
+    <OrderCustomer
+      dateTime={orderCustomer.dateTime}
+      email={orderCustomer.email}
+      telephone={orderCustomer.telephone}
+    />
   ));
