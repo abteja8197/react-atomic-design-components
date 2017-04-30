@@ -1,0 +1,43 @@
+@import '../../../theming/config';
+
+.order-state {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row nowrap;
+  justify-content: space-around;
+
+  background-color: lighten($color-grey, 20);
+
+  &__state,
+  &__assignee,
+  &__date-time {
+    margin-top: 5px;
+  }
+
+  &__state-text {
+    margin-top: -7px;
+  }
+
+  &__assignee-text {
+    .info {
+      color: $color-text-title;
+    }
+
+    margin-top: 10px;
+  }
+
+  &__dateTime-text {
+    display: inline-flex;
+    margin-top: 10px;
+  }
+
+  &__date-text {
+    .info {
+      color: $color-text-title;
+    }
+  }
+}

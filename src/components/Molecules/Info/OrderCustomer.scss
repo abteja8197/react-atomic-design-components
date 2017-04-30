@@ -1,0 +1,31 @@
+@import '../../../theming/config';
+
+.order-customer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  padding: 10px;
+
+  &__date-time,
+  &__email,
+  &__telephone {
+    padding: 5px;
+  }
+
+  &__date-time {
+    display: inline-flex;
+  }
+
+  &__dateTime-text {
+    display: inline-flex;
+    margin-left: 0;
+  }
+
+  &__email {
+    display: inline-flex;
+  }
+
+  &__telephone {
+    display: inline-flex;
+  }
+}
