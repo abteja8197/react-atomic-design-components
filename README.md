@@ -1,33 +1,61 @@
 # Order Component
 
 ## Approach
-This project is bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-`react` and `react-dom` are used to render the layout
+Development approach is to build big and complex components by first breaking them down into smaller and less complex components to promote modularity, reusability, scalability, maintainability via Component Driven Design (CDD) and Atomic Design Patterns. Following this approach, smaller pieces of the whole are built first as atoms and molecules implemented as React components to together form organisms and templates.
 
-Order component is built using Atomic Design patterns to promote re-usability with a clearly defined component structure.
+## Web technologies & patterns
+- Create React App
 
-Components are built from small to big in terms of complexity. Atoms are built to form molecules,
-molecules to form a single `Order` organism and the organism is populated with static data in
-`OrderCard` template.
+  This project is bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+  `react` and `react-dom` are used to render the layout
 
-Atoms are categorized as `Image`, `List`, `Text` and `Title` components.
-Molecules are categorized as `Banner`, `Info` and `List` components.
+- Storkbook
 
-`Order` is the only organism.
+  [Storybook](https://github.com/storybooks/storybook) is used as a development environment for all the React UI components. It allows you to browse this component library, view the different states of each component, and interactively develop and test components.
 
-`OrderCard` is the only template.
+- Atomic Design
 
-## Development Detail
-create-react-app is used to initially create the package.
+  Order component is built using [Atomic Design](http://atomicdesign.bradfrost.com/table-of-contents/) patterns to promote re-usability with a clearly defined component structure.
 
-Application entry point is `/src/index.js` as indicated in `/config/webpack.config.dev.js` and `/config/webpack.config.prod.js` files
+  Components are built from small to big in terms of complexity. Atoms are built to form molecules,
+  molecules to form a single `Order` organism and the organism is populated with static data in
+  `OrderCard` template.
 
-Application is already ejected from react-scripts using `npm run eject` to extend webpack configuration with
+  Atoms are categorized as `Image`, `List`, `Text` and `Title` components.
+  Molecules are categorized as `Banner`, `Info` and `List` components.
+
+  `Order` is the only organism.
+
+  `OrderCard` is the only template.
+
+- Babel
+
+  [Babel](https://github.com/babel/babel) is used for transpiling ES6 to ES5 for the browser.
+
+- Webpack
+
+  [Webpack](https://github.com/webpack/webpack) is used to create bundles for development, production and storybook
+
+- Sass
+
+  [Sass](http://sass-lang.com/) CSS3 extention is used for adding nested rules, variables, mixins, selector inheritance.
+
+- BEM
+
+  [BEM](http://getbem.com/) Block Element Modifier methodology is used to to create reusable components by enabling independent blocks and CSS selectors to promote modularity and flexibility.
+
+## Development Notes
+- create-react-app is used to initially create the package.
+
+- Application entry point is `/src/index.js` as indicated in `/config/webpack.config.dev.js` and `/config/webpack.config.prod.js` files
+
+- Application is already ejected from react-scripts using `npm run eject` to extend webpack configuration with
 `scss` loader.
 
-`/.storybook/config.js` contains Storybook configuration
+- `/.storybook/config.js` contains Storybook configuration
 `/.storybook/webpack.config.js` extends webpack configuration for Storybook with `scss` loader.
 
+- `sass-loader` and `node-sass` packages are used by webpack for compiling `.scss` files.
 
 ## Available Scripts
 
@@ -70,14 +98,14 @@ Open [http://localhost:6006/](http://localhost:6006/) to view it in the browser.
    |-theming
 ```
 
-`components` folder contains all the components structured in atomic design patterns
+- `components` folder contains all the components structured in atomic design patterns
 as atoms, molecules, organisms and templates taking into account the complexity of each component.
 
-`data` folder contains the static data used to populate the components with sample data.
+- `data` folder contains the static data used to populate the components with sample data.
 
-`font` folder contains the IcoMoon fonts file
+- `font` folder contains the IcoMoon fonts file
 
-`stories` folder contains the stories of all components in `index.js` file
+- `stories` folder contains the stories of all components in `index.js` file
 
 ## Components
 
