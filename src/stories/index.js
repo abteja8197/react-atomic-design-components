@@ -18,7 +18,10 @@ import OrderCustomer from '../components/Molecules/Info/OrderCustomer';
 import OrderState from '../components/Molecules/Info/OrderState';
 import OrderItem from '../components/Molecules/Info/OrderItem';
 import OrderList from '../components/Molecules/List/OrderList';
+
 import Order from '../components/Organisms/Card/Order';
+
+import OrderCard from '../components/Templates/Order/OrderCard';
 
 const orderHeader = {
   "title": "Mevrouw de Boer",
@@ -184,6 +187,16 @@ storiesOf('OrderList', module)
 storiesOf('Order', module)
   .add('default', () => (
     <Order
+      orderHeader={orderHeader}
+      orderCustomer={orderCustomer}
+      orderState={orderState}
+      orderList={orderList}
+    />
+  ));
+
+storiesOf('OrderCard', module)
+  .add('default', () => (
+    <OrderCard
       orderHeader={orderHeader}
       orderCustomer={orderCustomer}
       orderState={orderState}
