@@ -10,9 +10,14 @@ import Label from '../components/Atoms/Text/Label';
 import TextListItem from '../components/Atoms/List/TextListItem';
 import TextList from '../components/Atoms/List/TextList';
 
+import CheckMark from '../components/Atoms/Image/CheckMark';
+import Image from '../components/Atoms/Image/Image';
+
 import OrderHeader from '../components/Molecules/Banner/OrderHeader';
 import OrderCustomer from '../components/Molecules/Info/OrderCustomer';
 import OrderState from '../components/Molecules/Info/OrderState';
+import OrderItem from '../components/Molecules/Info/OrderItem';
+import OrderList from '../components/Molecules/List/OrderList';
 
 const orderHeader = {
   "title": "Mevrouw de Boer",
@@ -48,6 +53,34 @@ const orderState = {
     "text": "2016-05-25 10:30"
   }
 };
+
+const image = {
+  "src": "//placehold.it/57/#939393/000000",
+  "alt": "Boltaart"
+};
+
+const firstOrderItem = {
+  "status": "NEW",
+  "image": image,
+  "name": "Boltaart Bosbessen",
+  "description": "Overheerlijke Boltaart met Bosbessen."
+};
+
+const secondOrderItem = {
+  "status": "NEW",
+  "image": image,
+  "name": "Aarbeien Boltaart",
+  "description": "Biscuitdeeg met aardbeienbavaroise."
+};
+
+const thirdOrderItem = {
+  "status": "NEW",
+  "image": image,
+  "name": "Truffel Boltaart",
+  "description": "Chocolade mousse en biscuitdeeg gevuld met koffierumsaus en feuilletine."
+};
+
+const orderList = [firstOrderItem, secondOrderItem, thirdOrderItem];
 
 storiesOf('Icon', module)
   .add('printer', () => (
@@ -97,6 +130,19 @@ storiesOf('TextList', module)
     <TextList items={["Nieuw", "In behandeling"]} />
   ));
 
+storiesOf('CheckMark', module)
+  .add('selected', () => (
+    <CheckMark isSelected width={"50"} height={"50"} />
+  ))
+  .add('not selected', () => (
+    <CheckMark width={"50"} height={"50"} />
+  ));
+
+storiesOf('Image', module)
+  .add('default', () => (
+    <Image image={image} />
+  ));
+
 storiesOf('OrderHeader', module)
   .add('default', () => (
     <OrderHeader title={orderHeader.title} subtitle={orderHeader.subtitle} />
@@ -119,3 +165,18 @@ storiesOf('OrderState', module)
       dateTime={orderState.dateTime}
     />
   ));
+
+storiesOf('OrderItem', module)
+  .add('default', () => (
+    <OrderItem
+      image={firstOrderItem.image}
+      name={firstOrderItem.name}
+      description={firstOrderItem.description}
+    />
+  ));
+
+storiesOf('OrderList', module)
+  .add('default', () => (
+    <OrderList items={orderList} />
+  ));
+
