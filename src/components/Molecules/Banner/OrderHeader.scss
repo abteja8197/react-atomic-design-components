@@ -1,0 +1,35 @@
+@import '../../../theming/config';
+
+.order-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row nowrap;
+  justify-content: space-around;
+
+  &__link-image,
+  &__print-image {
+    &:hover {
+        cursor: pointer;
+    }
+  }
+
+  &__link-image {
+    margin-top: 30px;
+  }
+
+  &__text {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  &__print-image {
+    margin: 10px -40px 10px;
+    padding: 10px;
+
+    background-color: lighten($color-grey, 20);
+  }
+}
